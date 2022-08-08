@@ -28,8 +28,5 @@
 #
 
 <h3>트러블 슈팅</h3>
-
-#
-
-<a url="https://github.com/alaliyo/final_project_MAP_front" target="_blank">프로젝트 프론트 팀레포 링크</a>
+<a href="https://github.com/alaliyo/final_project_MAP_front" target="_blank">프로젝트 프론트 팀레포 링크</a>
 <p>프로젝트 개요, 아키텍터, 백엔드 팀레포 등 더 상세한 내용을 확인 할 수 있습니다.</p>
