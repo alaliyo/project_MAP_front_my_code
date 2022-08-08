@@ -1,9 +1,9 @@
 # project_MAP_front_my_code
-<a href="https://github.com/alaliyo/final_project_MAP_front" target="_blank">프로젝트 프론트 팀레포 링크</a>
-<p>프로젝트 개요, 아키텍터, 백엔드 팀레포 등 더 상세한 내용을 확인 할 수 있습니다.</p>
+<a href="https://github.com/alaliyo/final_project_MAP_front" target="_blank">클릭 시 프로젝트 개요, 아키텍터, 백엔드 팀레포 등 더 상세한 내용을 확인 할 수 있습니다</a>
 
+<br>
 
-<h3>내가 구현한 기능</h3>
+<h2>1. 내가 구현한 기능</h2>
 <ol>
   <li>웹 페이지의 html, css 설계 및 구현</li>
   <li>api를 ajax으로 연결 및 웹 페이지에 구현</li>
@@ -13,7 +13,8 @@
 
 #
 
-<h3>사용한 프로그래밍(마크업) 언어 및 라이브러리, 프레임 워크</h3>
+<br>
+<h2>2. 사용한 프로그래밍(마크업) 언어 및 라이브러리, 프레임 워크</h2>
 <ul>
   <li>HTML, CSS, JavaScript</li>
   <li>jquery, ajax</li>
@@ -21,7 +22,8 @@
 
 #
 
-<h3>소통하는 방법</h3
+<br>
+<h2>3. 소통하는 방법</h2>
 <p>&nbsp; 주로 api 설계부분에서 소통을 했으며 명세서를 작성하는 부분부터 백엔드 개발자들과 함께 진행했습니다.
 <br> api 설계와 다르게 구성되어 있어 400포트의 오류가 발생하면 바로 백엔드 개발자와 대화로 해결을 하고
 <br> 새롭게 기능을 추가하는데 기존의 api를 활용하여 프론트앤드에서 처리가 가능하면
@@ -30,5 +32,11 @@
 
 #
 
-<h3>트러블 슈팅</h3>
 <br>
+<h2>4. 트러블 슈팅</h2>
+<span>
+  <h3>4.1. 스프링 환경에 처음으로 ajax을 이용햐 api와 연결시 문제</h3>
+  <
+</span>
+
+#
