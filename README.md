@@ -37,7 +37,7 @@
 <span>
   <details>
     <summary>
-      <h3>4.1. 스프링 환경에 처음으로 ajax을 이용햐 api와 연결시 문제</h3>
+      <h3>4.1. 스프링 환경에 처음으로 ajax을 이용해 api와 연결 시 오류</h3>
     </summary>
     <ul>
       <li>Python의 프레임 워크인 flask 환경에서 작성한 api만 연결을 했던 경험으로 ajax을 이용해 코드구성함.</li>
