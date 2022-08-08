@@ -35,8 +35,42 @@
 <br>
 <h2>4. 트러블 슈팅</h2>
 <span>
-  <h3>4.1. 스프링 환경에 처음으로 ajax을 이용햐 api와 연결시 문제</h3>
-  <
+  <details>
+    <summary>
+      <h3>4.1. 스프링 환경에 처음으로 ajax을 이용햐 api와 연결시 문제</h3>
+    </summary>
+    <ul>
+      <li>Python의 프레임 워크인 flask 환경에서 작성한 api만 연결을 했던 경험으로 ajax을 이용해 코드구성함.</li>
+      <li>10일 후 spring 환경에서 작성된 코드들이 ec2로 배포되어 코드가 작동이 되는지 테스트를 하는데 400포트 오류발생</li>
+      <details>
+        <summary>수정 전 코드</summary>
+        <pre><code>
+  $.ajax({
+    type: "POST",
+    url: "/user/community/post",
+    data: {title: title, content: content, created_at: created_at},
+    success: function (response) {
+      alert(response['msg']);
+      window.location.reload();
+        </code></pre>
+      </details>
+      <li>구글링하여 ajax이랑 spring은 GET은 상관없으나 POST, DELETE, PUT는 json현태로 넘겨주어야 한다는 것을 알아내어 전체적으로 코드 변경함.</li>
+            <details>
+        <summary>수정 후 코드</summary>
+        <pre><code>
+  $.ajax({
+    type: "POST",
+    url: "/user/community/post",
+    data: {title: title, content: content, created_at: created_at},
+    contentType: "application/json;",
+    success: function (response) {
+        console.log(response)
+        alert(response['저장되었습니다.']);
+        window.location.reload("/community.js");
+        </code></pre>
+      </details>
+    </ul>
+  </details>
 </span>
 
 #
