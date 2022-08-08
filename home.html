@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make A Plan</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/static/MAP_logo.png">
+    <!-- 부트스트랩 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- css와 font -->
+    <link href="css/home.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-barun-gothic.css" rel="stylesheet">
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <!-- JS -->
+    <script type="text/javascript" src="JS/home.js"> </script>
+    <script type="text/javascript" src="JS/logout.js"> </script>
+
+</head>
+
+<body>
+        <!-- 윗 메뉴 바 -->
+    <nav class="menu">
+        <div style="height: 80px;">
+            <div class="menu_box">
+                <a href="home.html" class="menu_btn position" style="display: block; float: left; width: 200px;">
+                    <img src="/static/logo_white0.png" style="width: 60px; float: left; margin-right: 5px; margin-left: 10px;">
+                    <p style="margin-top: 37px; font-size: 12px;">make a plan</p>
+                </a>
+                <div class="position" style="float: right;" >
+                    <a class="remote_btn position_right" onclick="logout()" id="logout">
+                        <div class="menu_btn abc"  style="font-size: 19px;">로그아웃</div>
+                    </a>
+                    <a class="remote_btn position_right" href="login.html" id="login">
+                        <div class="menu_btn "  style="font-size: 19px;">로그인</div>
+                    </a>
+                    <a class="remote_btn position_right" style="padding-top: 10px;" onclick="go_mypage()">
+                        <div class="menu_btn haed_img" style="float: left;"></div>
+                        <div class="haed_nickname menu_btn" style="float: right; font-size: 19px;"></div>
+                    </a>
+                </div>
+                <div class="plan_btn_box">
+                    <a href="#" onclick="go_plan()" class="plan_btn" >
+                        여행 설계
+                    </a>
+                    <a href="#" onclick="go_community()" class="plan_btn" style="margin-left: 30px;" >
+                        커뮤니티
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 검색창 -->
+    <div class="field has-addons field_background">
+        <div class="control" style="margin:auto;">
+            <input id = "input-local" class="input" style="width: 700px; height: 40px;" type="text" placeholder="지역을 입력하세요" onkeyup="if(window.event.keyCode==13){search_btn()}">
+            <buttun class="button is-info input-local" onclick="search_btn()" style="height: 40px; float:right;">검색</buttun>
+        </div>
+    </div>
+
+    <!-- 정렬 -->
+    <nav style="margin-left: 15%; margin-top: 20px;">
+        <select id="select_sort" style="font-size: 15px;">
+            <option value="createdAt,desc">최신순</option>
+            <option value="createdAt,asc">오래된순</option>
+            <option value="views,desc">조회수순</option>
+            <option value="views,asc">조회수역순</option>
+            <option value="likes,desc">좋아요순</option>
+            <option value="likes,asc">좋아요역순</option>
+        </select>
+        <select id="select_category" style="font-size: 15px; margin-left: 5px;">
+            <option value="ALL">모두</option>
+            <option value="맛집투어">맛집투어</option>
+            <option value="힐링여행">힐링여행</option>
+            <option value="풍경">풍경</option>
+            <option value="카페투어">카페투어</option>
+            <option value="관광지">관광지</option>
+            <option value="데이트">데이트</option>
+        </select>
+    </nav>
+    
+    <!-- 카드 생성 -->
+    <div class="card_box">
+        <div id="cards" class="cards">
+        </div>
+    </div> 
+
+</body>
+</html>

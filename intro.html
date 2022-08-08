@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make A Plan</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/static/MAP_logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-barun-gothic.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/intro.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="menu">
+        <div style="height: 80px;">
+            <div class="menu_box">
+                <a href="home.html" class="menu_btn position" style="display: block; float: left; width: 200px;">
+                    <img src="/static/MAP000.png" style="width: 60px; float: left; margin-right: 5px; margin-left: 10px;">
+                    <p style="margin-top: 37px; font-size: 12px;">make a plan</p>
+                </a>
+                <div class="position" style="float: right;" >
+                    <a class="remote_btn position_right" href="login.html">
+                        <div class="menu_btn" style="font-size: 19px;">로그인</div>
+                    </a>
+                    <a class="remote_btn position_right">
+                        <div class="menu_btn" style="font-size: 19px;">설명서</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div style="height:98%;">
+        <div class="title-_box">
+            <div >
+                <img src="static/MAP_logo.png" style="width: 70%;"/>
+                <br>
+            </div>
+            <br>
+
+            <a class="start_btn_back" onclick="location.href='home.html'">
+                <img id="start_btn" class="start_btn" src="static/startbtn.png"></a>
+            </a>
+        </div>
+        <div style="float: right; width: 60%;">
+            <video autoplay muted loop style="width: 100%;">
+                <source src="static/intro.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make A Plan my page</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/static/MAP_logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-barun-gothic.css" rel="stylesheet">
+    <!-- css -->
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/mypage.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/community.css" rel="stylesheet" >
+    <link href="css/home.css" rel="stylesheet" >
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <!-- JS -->
+    <script type="text/javascript" src="JS/mypage.js"></script>
+    <script type="text/javascript" src="JS/logout.js"></script>
+    <script type="text/javascript" src="JS/profil_revise.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+</head>
+<body>
+    <!-- 윗 메뉴 바 -->
+    <nav class="menu">
+        <div style="height: 80px;">
+            <div class="menu_box">
+                <a href="home.html" class="menu_btn position" style="display: block; float: left; width: 200px;">
+                    <img src="/static/logo_white0.png" style="width: 60px; float: left; margin-right: 5px; margin-left: 10px;">
+                    <p style="margin-top: 37px; font-size: 12px;">make a plan</p>
+                </a>
+                <div class="position" style="float: right;" >
+                    <a class="remote_btn position_right" onclick="logout()">
+                        <div class="menu_btn abc"  style="font-size: 19px;">로그아웃</div>
+                    </a>
+                </div>
+                <div class="plan_btn_box">
+                    <a href="plan.html" onclick="localStorage.setItem('action','create')" class="plan_btn" >
+                        여행 설계
+                    </a>
+                    <a href="community.html" class="plan_btn" style="margin-left: 30px;" >
+                        커뮤니티
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+<!-- 프로필 및 게시물 박스--> 
+<div class="box" style="margin: 80px 15% 0px 15%">
+
+    <!-- 프로필 -->
+    <div id="my_profil"></div>
+
+    <!-- 프로필 수정 전 패스워드 조회 -->
+    <div id="my_profil_password_check" style="width: 75%; display: none; margin: 83px;" >
+        <p>비밀번호를 입력하세요</p>
+        <div class="field has-addons" style="display: flex;">
+            <div class="control has-icons-left" style="width: 100%;">
+                <input id="password_check_input" class="input" type="password" placeholder="비밀번호를 입력해주세요" onkeyup="if(window.event.keyCode==13){password_check_btn()}">
+                <span class="icon is-small is-left"><i class="fa fa-user"></i></span>
+            </div>
+                <button class="button is-sparta" style="height: 40px;" onclick="password_check_btn()">조회하기</button>
+        </div>
+    </div>
+
+    <!-- 프로필 수정 -->
+    <div id="my_profil_revise" style="display: none;">
+        <div class="community_box" style="height: 230px; margin-top: 0;">
+            <div id="communitys">
+                <div>
+                    <div style="margin-bottom: 5px; font-size: 20px;">
+                        <!-- 탈퇴 기능 -->
+                        <!--
+                        <a class="withdrawal_case" onclick="withdrawal()">
+                            회원탈퇴
+                        </a>
+                        -->
+                        <!-- 이미지 파일 업로드  -->
+                        <div class="custom-file" style="margin: 10px;">
+                            <label style="font-size: 15px" class="custom-file-label" for="file">프로필 이미지 : </label>
+                            <input type="file" class="custom-file-input" id="file">
+                        </div>
+                        <!-- 닉네임 수정 -->
+                        <div style="display: flex;">
+                            <p style="width: 80px; display: block; font-size: 17px;">닉네임 : </p>
+                            <div class="control has-icons-left" style="width:100%;">
+                                <input type="text" class="nickname_textbox" id="input-nickname" style="width: 100%;" onkeyup="if(window.event.keyCode==13){nickname_check_dup()}">
+                            </div>
+                            <div id="btn-check-dup" class="control">
+                                <button style="width: 80px;" onclick="nickname_check_dup()">중복확인</button>
+                            </div>
+                        </div>
+                        <p id="help-nickname" class="help is-hiddden" style="height: 20px;"></p>
+                        <!-- 이메일 수정 -->
+                        <div style="display: flex;" id="email_hide">
+                            <p style="width: 80px; display: block; font-size: 17px;">이메일 : </p>
+                            <div class="control has-icons-left" style="width:100%">
+                                <input type="text" class="email_textbox" id="input-email" style="width: 100%;" onkeyup="if(window.event.keyCode==13){email_check_dup()}">
+                            </div>
+                            <div id="btn-check-dup" class="control">
+                                <button style="width: 80px;" onclick="email_check_dup()">중복확인</button>
+                            </div>
+                        </div>
+                        <p id="help-email" class="help is-hiddden" style="height: 20px;"></p>
+                        
+                        <!-- <br>
+                        비밀번호: <input type="text" class="image_textbox" id="password_textbox" style="width: 80%;"> -->
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div style="float: right;">
+                <button onclick="profil_revise_off()">취소</button>
+                <button onclick="update_profile()">저장</button>
+            </div>
+        </div>
+    </div>
+
+    <hr style="background: #c0c0c0; margin: 0;">
+        <!-- 리모컨 -->
+    <div style="display: flex;">
+        <div class="menu_remote_change button0" style="color:black;">
+            <a class="menu_remote_btm_change menu_remote0" onclick="my_plan()">나의계획</a>
+        </div>
+        <div class="menu_remote button1">
+            <a class="menu_remote_btm menu_remote1"  onclick="my_like_plan()">즐겨찾기</a>
+        </div>
+        <div class="menu_remote button2">
+            <a class="menu_remote_btm menu_remote2" onclick="my_community_box()">커뮤니티</a>
+        </div>
+    </div>
+    <!-- 게시물 -->
+    <div class="cards" id="card-box">
+        <div id="mycards">
+        </div>
+    </div>
+    <!-- 좋아요한 게시물 -->
+    <div id="my_like_plan" style="margin-left: 10%">
+        <div id="cards" class="cards">
+        </div>
+    </div>
+    <!-- 커뮤니티 -->
+    <div id="my_communtity_box" style="margin-left: 5%; margin-right: 5%;">
+        <div class="my_community_box" >
+            <div  style="height: 480px;">
+                <div class="title_box">
+                    <p style="float: left;">제목</p>
+                    <p style="float: right; margin-left: 80px; margin-right: 15%;">작성일시</p>
+                </div>
+                <br>
+                <hr class="hr_top">
+                <div id="my_communtity">
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <ul id="pagingul"></ul>
+                <p id="displayCount"></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
