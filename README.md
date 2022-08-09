@@ -74,3 +74,27 @@
 </span>
 
 #
+
+<span>
+  <details>
+    <summary>
+      <h3>4.2. 닉네임을 비교해 삭제 기능 구현 시 버튼이 떴다 안 떳다 하는 </h3>
+    </summary>
+    <ul>
+      <li>백엔드에서 게시물 유저 정보 조회 api, 웹페이지에 저장된 토큰을 조회해 유저 정보 조회 api를 이용해 닉네임이 겹칠 시 삭제 버튼 보이게 구현</li>
+      <li>JS 코드 흐름을 잘 몰라 버튼이 랜덤적으로 띄우는 오류발생</li>
+      <details>
+        <summary>수정 전 코드 History</summary>
+        <a href="https://github.com/alaliyo/final_project_MAP_front/commit/78a9bfb2dfc20823ef1102a2855a340da244c2b1">
+        코드 링크</a>
+      </details>
+      <li>코드 실행 순서를 공부하고 유저 정보 조회 시 게시물 조회 함수를 넣으면 된다고 알아냄</li>
+            <details>
+        <summary>수정 후 코드 링크</summary>
+        <a href="https://github.com/alaliyo/final_project_MAP_front/blob/06c680e2508edc9e3cca7737fd5d0f98641a27fd/JS/community_comment.js#L29;">
+        코드 링크</a>
+      </details>
+    </ul>
+  </details>
+</span>
+
