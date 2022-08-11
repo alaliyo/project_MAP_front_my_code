@@ -54,7 +54,8 @@
       window.location.reload();
         </code></pre>
       </details>
-      <li>구글링하여 ajax이랑 spring은 GET은 상관없으나 POST, DELETE, PUT는 json현태로 넘겨주어야 한다는 것을 알아내어 전체적으로 코드 변경함.</li>
+      <li>구글링하여 spring은 브라우저에서 XML을 조작하는 것은 JS인데 굳이 XML으로 전달하여 다시 JS로 파싱 할 필요가 없도고 판단하여 JSON 형태로 주고받계 설계되었음을 암.</il>
+      <il>ajax GET은 데이터를 받기만 하는 는 부분이니 제외하고 POST, DELETE, PUT는 json현태로 백엔드에 넘기게 전체적으로 코드 변경함.</li>
             <details>
         <summary>수정 후 코드</summary>
         <pre><code>
@@ -69,6 +70,7 @@
         window.location.reload("/community.js");
         </code></pre>
       </details>
+      <li>JSON형태로 바꾸니 데이터들이 잘 넘기고 받을 수 있음을 암.</li>
     </ul>
   </details>
 </span>
@@ -82,13 +84,14 @@
     </summary>
     <ul>
       <li>백엔드에서 게시물 유저 정보 조회 api, 웹페이지에 저장된 토큰을 조회해 유저 정보 조회 api를 이용해 닉네임이 겹칠 시 삭제 버튼 보이게 구현</li>
-      <li>JS 코드 흐름을 잘 몰라 버튼이 랜덤적으로 띄우는 오류발생</li>
+      <li>JS 코드 흐름을 잘 몰라 유저 정보를 조회하기 전에 게시물 조회를 해서 닉네임 값을 비교하지 못하는 상황도 생겨 버튼이 랜덤적으로 뜨는 오류발생</li>
       <details>
         <summary>수정 전 코드 History</summary>
         <a href="https://github.com/alaliyo/final_project_MAP_front/commit/78a9bfb2dfc20823ef1102a2855a340da244c2b1">
         코드 링크</a>
       </details>
-      <li>코드 실행 순서를 공부하고 유저 정보 조회 시 게시물 조회 함수를 넣으면 된다고 알아냄</li>
+      <li> 함수 실행되는 흐름에 대해 공부 시작 <a href="https://doitnow-man.tistory.com/128">참조한 사이트 링크</a></li>
+      <li> $(document).ready(function() {} 안에는 유저정보 함수를 넣고 유저 정보 함수 안 success: function () {} 안에 게시물 조회하고 붙이는 함수를 실행하계 하여 해경함.</li>
             <details>
         <summary>수정 후 코드 링크</summary>
         <a href="https://github.com/alaliyo/final_project_MAP_front/blob/06c680e2508edc9e3cca7737fd5d0f98641a27fd/JS/community_comment.js#L29;">
